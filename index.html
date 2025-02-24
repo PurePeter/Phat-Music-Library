@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phat's Music</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="icon" href="./assets/img/music_icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/35337d4aa4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="player">
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Search -->
+            <div class="search-box">
+                <input type="text" class="search-bar" placeholder="Search for song, artist name...">
+                <i class="fas fa-search"></i>
+                <div class="search-songs">
+
+                </div>
+            </div>
+
+            <!-- Header -->
+            <div class="header-wrap">
+                <div class="btn btn-volume">
+                    <i class="fas fa-volume-up"></i>
+                    <div class="volume-wrap">
+                        <input type="range" class="volume-range" value="100" min="0" max="100">
+                        <p class="volume-output">100</p>
+                    </div>
+                </div>
+                <header>
+                    <h4>Now playing:</h4>
+                    <h2>Nothing in playlist</h2>
+                </header>
+                <div class="option">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <div class="option-list">
+                        <div class="option-item theme-btn">
+                            <i class="theme-icon fas fa-moon"></i>
+                            <span>Dark mode</span>
+                        </div>
+                        <div class="option-item">
+                            <i class="theme-icon fa-regular fa-heart"></i>
+                            <span>Favorite songs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CD -->
+            <div class="cd">
+                <div class="cd-thumb" style="background-image: url('https://s3.amazonaws.com/static.tumblr.com/jn9hrij/20Ul2zzsr/albumart.jpg');"></div>
+            </div>
+
+            <!-- Control -->
+            <div class="control">
+                <div class="btn btn-repeat">
+                    <i class="fas fa-redo"></i>
+                </div>
+                <div class="btn btn-prev">
+                    <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="btn btn-toggle-play">
+                    <i class="fas fa-pause icon-pause"></i>
+					<i class="fas fa-play icon-play"></i>
+                </div>
+                <div class="btn btn-next">
+                    <i class="fas fa-step-forward"></i>
+                </div>
+                <div class="btn btn-random">
+                    <i class="fas fa-random"></i>
+                </div>
+            </div>
+
+            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+
+            <audio id="audio" src=""></audio>
+        </div>
+
+        <!-- PLaylist -->
+        <div class="playlist">
+
+        </div>
+    </div>
+
+    <!-- Overlay contains favorite songs box -->
+    <div class="favorite-songs-modal">
+        <div class="favorite-songs">
+            <div class="favorite-songs-header">
+                <h4>Danh sách bài hát yêu thích</h4>
+				<i class="favorite-songs-close fas fa-times"></i>
+            </div>
+            <div class="favorite-songs-list">
+                
+            </div>
+            <div class="empty-list">
+                <i class="fas fa-music"></i>
+                <h4>Empty music list o(TヘTo)</h4>
+            </div>           
+        </div>
+    </div>
+
+    <footer>
+        <p class="enjoyText">
+            Chúc mọi người thưởng thức bài hát vui vẻ nhaaa ヾ(≧▽≦*)o
+        </p>
+    </footer>
+    
+    <script type="module" src="./assets/interactive/main.js"></script>
+</body>
+
+</html>
