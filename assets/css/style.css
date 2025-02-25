@@ -302,6 +302,10 @@ header h2 {
     color: var(--secondary-color);
 }
 
+.control .btn:not(.active) {
+    color: var(--text-color); 
+}
+
 .control .btn:hover {
     color: var(--secondary-color);
     transform: scale(1.1);

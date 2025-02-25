@@ -318,18 +318,31 @@ const app = {
         }
 
         // Bật tắt nút random
-        randomBtn.onclick = function () {
-            _this.isRandom = !_this.isRandom;
-            _this.setConfig('isRandom', _this.isRandom);
-            randomBtn.classList.toggle('active', _this.isRandom);
+        function handleButtonClick(button, stateKey, otherButton, otherStateKey) {
+            return function (event) {
+                event.preventDefault(); // Ngăn chặn hành vi không mong muốn trên mobile
+        
+                _this[stateKey] = !_this[stateKey];
+                _this.setConfig(stateKey, _this[stateKey]);
+        
+                // Cập nhật trạng thái hiển thị
+                button.classList.toggle('active', _this[stateKey]);
+        
+                // Nếu bật random thì tắt repeat và ngược lại
+                if (_this[stateKey]) {
+                    _this[otherStateKey] = false;
+                    _this.setConfig(otherStateKey, _this[otherStateKey]);
+                    otherButton.classList.remove('active');
+                }
+            };
         }
-
-        // Bật tắt nút repeat
-        repeatBtn.onclick = function () {
-            _this.isRepeat = !_this.isRepeat;
-            _this.setConfig('isRepeat', _this.isRepeat);
-            repeatBtn.classList.toggle('active', _this.isRepeat);
-        }
+        
+        // Đảm bảo hỗ trợ cả mobile & desktop
+        const eventType = 'ontouchstart' in window ? 'touchstart' : 'click';
+        
+        randomBtn.addEventListener(eventType, handleButtonClick(randomBtn, 'isRandom', repeatBtn, 'isRepeat'));
+        repeatBtn.addEventListener(eventType, handleButtonClick(repeatBtn, 'isRepeat', randomBtn, 'isRandom'));
+                        
 
         // #endregion Controllers
 
