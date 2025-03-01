@@ -137,6 +137,11 @@ html {
     right: 0;
     text-align: center;
     display: none;
+    background-color: #fff;
+}
+
+.dark .volume-wrap {
+    background-color: #1A1A1A;
 }
 
 .btn-volume:hover .volume-wrap {
