@@ -13,10 +13,10 @@ export default {
             image: "https://preview.redd.it/miku-has-been-a-rotten-girl-v0-8s6v85ettlde1.png?auto=webp&s=1aa4898cf87553781642f4654044d6daeadf83b2"
         },
         {
-            name: "The Foxy's Night",
-            singer: "Taaryn",
-            path: "./assets/music/Foxy_Night.mp3",
-            image: "https://i1.sndcdn.com/artworks-TV14DLse2OmTFKu9-2AZFfw-t500x500.jpg"
+            name: "Mashup Nevada x Đi Đi Đi",
+            singer: "Daniel Mastro Mashup Remix",
+            path: "./assets/music/Mashup_Nevada_x_Di_Di_Di.mp3",
+            image: "https://photo-resize-zmp3.zadn.vn/w600_r1x1_jpeg/cover/3/f/8/b/3f8b3ba7387b81bf286658ea069b874f.jpg"
         },
         {
             name: "Gods Remix",
