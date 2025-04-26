@@ -16,6 +16,7 @@
 body {
     background-color: #f5f5f5;
     -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.35s, color 0.3s;
 }
 
 html {
@@ -61,9 +62,11 @@ html {
     top: 0;
     width: 100%;
     max-width: 480px;
+    max-height: 500px;
     border-bottom: 1px solid #ebebeb;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.35s, color 0.3s;
 }
 
 /* #reginon search */
@@ -86,6 +89,7 @@ html {
     border-radius: 18px;
     border: none;
     outline: none;
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .search-songs {
@@ -176,6 +180,10 @@ header h2 {
     color: var(--text-color);
     font-size: 20px;
 }
+
+header h4 {
+    font-size: 14px;
+}
 /* #endregion HEADER */
 
 /* #region Options */
@@ -194,6 +202,8 @@ header h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1;
     display: none;
+    animation: fadeIn 0.25s forwards;
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .option-item {
@@ -201,10 +211,12 @@ header h2 {
     padding: 13px;
     cursor: pointer;
     user-select: none;
+    transition: color 0.4s, background-color 0.3s;
 }
 
 .option-item:hover {
     background-color: #f3f3f3;
+    color: var(--primary-color);
 }
 
 .theme-icon {
@@ -223,6 +235,7 @@ header h2 {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.35);
     display: none;
+    animation: fadeIn 0.2s forwards;
 }
 
 .empty-list {
@@ -245,7 +258,7 @@ header h2 {
 }
 
 .favorite-songs .song {
-    padding: 0 16px;
+    padding: 8px 16px;
     box-shadow: none;
 }
 
@@ -346,18 +359,19 @@ header h2 {
 /* #region PLAYLIST */
 .playlist {
     margin-top: 495px;
-    padding: 12px 6px 12px 6px;
+    padding: 6px;
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .song{
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
     background-color: #fff;
     padding: 8px 16px;
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .song:hover {
@@ -410,6 +424,7 @@ header h2 {
 .dark {
     background-color: var(--dark-color);
     color: var(--primary-color);
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .dark .player i:not(.icon-pause, .icon-play, .favorite i) {
@@ -419,10 +434,16 @@ header h2 {
 .dark .dashboard {
     border: none;
     background-color: #1A1A1A;
+    transition: background-color 0.35s, color 0.3s;
+}
+
+.dark .playlist {
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .dark .search-bar {
     color: #fff;
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .dark .search-bar,
@@ -442,6 +463,7 @@ header h2 {
 .dark .option-list {
     background-color: #222;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .dark .control .btn.active i {
@@ -460,6 +482,7 @@ header h2 {
 .dark .song {
     background-color: var(--dark-color-second);
     color: var(--primary-color);
+    transition: background-color 0.35s, color 0.3s;
 }
 
 .dark .song .favorite,
@@ -482,10 +505,30 @@ header h2 {
 
 .miniText {
     font-size: 12px;
-    margin: 0 0 10px 0;
+    margin: 5px 0 10px 0;
 }
 
 /* #endregion Dark mode theme */
+
+/* Area css for animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* End of Area css for animation */
+
+/* Fix bug */
+.song-node {
+    margin: 8px 0;
+}
+
+
+/* Responsive */
 @media (max-width: 739px) {
     .favorite-songs {
         width: 100%;
