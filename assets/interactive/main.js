@@ -178,7 +178,7 @@ const app = {
       if (searchResult.length > 0) {
         searchSongs.innerHTML = searchResult.join("");
       } else {
-        searchSongs.innerHTML = "Không có kết quả nào được tìm thấy ＞﹏＜";
+        searchSongs.innerHTML = "Oops, no results found ＞﹏＜";
       }
     };
 

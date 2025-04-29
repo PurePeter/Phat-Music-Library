@@ -387,7 +387,8 @@ header h4 {
 }
 
 .song.active .author,
-.song.active .title {
+.song.active .title,
+.song.active .favorite {
     color: var(--secondary-color);
 }
 
@@ -415,9 +416,29 @@ header h4 {
     font-size: 12px;
 }
 
-.liked i {
-    color: var(--secondary-color);
+.liked .favorite  {
+    color: var(--primary-color);
 }
+
+.favorite {
+    color: var(--dark-color-second);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.favorite:hover {
+    color: var(--primary-color);
+}
+
+/* .delete {
+    color: var(--dark-color-second);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.delete:hover {
+    color: var(--secondary-color);
+} */
 /* #endregion PLAYLIST */
 
 /* #region Dark mode theme */
@@ -492,7 +513,8 @@ header h4 {
 }
 
 .dark .song.active .author,
-.dark .song.active .title {
+.dark .song.active .title,
+.dark .song.active .favorite {
     color: var(--secondary-color);
 }
 

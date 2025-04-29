@@ -58,7 +58,9 @@
 
             <!-- CD -->
             <div class="cd">
-                <div class="cd-thumb" style="background-image: url('https://s3.amazonaws.com/static.tumblr.com/jn9hrij/20Ul2zzsr/albumart.jpg');"></div>
+                <div class="cd-thumb"
+                    style="background-image: url('https://s3.amazonaws.com/static.tumblr.com/jn9hrij/20Ul2zzsr/albumart.jpg');">
+                </div>
             </div>
 
             <!-- Control -->
@@ -71,7 +73,7 @@
                 </div>
                 <div class="btn btn-toggle-play">
                     <i class="fas fa-pause icon-pause"></i>
-					<i class="fas fa-play icon-play"></i>
+                    <i class="fas fa-play icon-play"></i>
                 </div>
                 <div class="btn btn-next">
                     <i class="fas fa-step-forward"></i>
@@ -92,20 +94,38 @@
         </div>
     </div>
 
+    <!-- Input file unhide to upload -->
+    <input type="file" id="upload-audio-input" accept="audio/*" style="display: none;">
+    <input type="file" id="upload-image-input" accept="image/*" style="display: none;">
+
+    <!-- Modal to input information song -->
+    <div id="upload-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Add new song</h3>
+            <input type="text" id="song-name-title" placeholder="Name song">
+            <input type="text" id="singer-name-title" placeholder="Name singer">
+            <button id="upload-image-btn">Select picture</button>
+            <img id="preview-image" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dplaceholder&psig=AOvVaw3TBoBGUO6QVYlK2O6Pik4A&ust=1745814882300000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLiulLWx94wDFQAAAAAdAAAAABAE"
+                alt="Preview" style="width: 100px; height: 100px; margin-top: 10px; object-fit: cover;">
+            <button id="save-song-btn">Save</button>
+            <button id="cancel-song-btn">Cancel</button>
+        </div>
+    </div>
+
     <!-- Overlay contains favorite songs box -->
     <div class="favorite-songs-modal">
         <div class="favorite-songs">
             <div class="favorite-songs-header">
                 <h4>Favorite Songs List</h4>
-				<i class="favorite-songs-close fas fa-times"></i>
+                <i class="favorite-songs-close fas fa-times"></i>
             </div>
             <div class="favorite-songs-list">
-                
+
             </div>
             <div class="empty-list">
                 <i class="fas fa-music"></i>
                 <h4>Empty music list o(TヘTo)</h4>
-            </div>           
+            </div>
         </div>
     </div>
 
@@ -113,9 +133,9 @@
         <p class="enjoyText">
             Wish you all a great time enjoying the songs! <br> ヾ(≧▽≦*)o
         </p>
-        <p class="enjoyText miniText">Version 1.1.5</p>
+        <p class="enjoyText miniText">Version 1.1.6</p>
     </footer>
-    
+
     <script type="module" src="./assets/interactive/main.js"></script>
 </body>
 
