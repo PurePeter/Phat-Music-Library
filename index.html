@@ -46,11 +46,15 @@
                     <div class="option-list">
                         <div class="option-item theme-btn">
                             <i class="theme-icon fas fa-moon"></i>
-                            <span>Dark mode</span>
+                            <span class="paddingLeft">Dark mode</span>
                         </div>
                         <div class="option-item">
                             <i class="theme-icon fa-regular fa-heart"></i>
                             <span>Favorite songs</span>
+                        </div>
+                        <div class="option-item upload-song">
+                            <i class="theme-icon fas fa-upload"></i>
+                            <span>Upload Song</span>
                         </div>
                     </div>
                 </div>
@@ -99,14 +103,19 @@
     <input type="file" id="upload-image-input" accept="image/*" style="display: none;">
 
     <!-- Modal to input information song -->
-    <div id="upload-modal" class="modal" style="display: none;">
+    <div id="upload-modal" class="modal">
         <div class="modal-content">
             <h3>Add new song</h3>
+            <p class="marginLeft">Tên bài hát</p>
             <input type="text" id="song-name-title" placeholder="Name song">
+            <p class="marginLeft">Tên tác giả</p>
             <input type="text" id="singer-name-title" placeholder="Name singer">
-            <button id="upload-image-btn">Select picture</button>
-            <img id="preview-image" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dplaceholder&psig=AOvVaw3TBoBGUO6QVYlK2O6Pik4A&ust=1745814882300000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLiulLWx94wDFQAAAAAdAAAAABAE"
-                alt="Preview" style="width: 100px; height: 100px; margin-top: 10px; object-fit: cover;">
+            <div class="container-add-picture">
+                <button id="upload-image-btn">Select picture</button>
+                <img id="preview-image" src="./assets/img/no-Image.png" alt="Preview"
+                    style="width: 70px; height: 70px; margin-top: 10px; object-fit: cover; border: 1px solid #666;">
+            </div>
+            <br>
             <button id="save-song-btn">Save</button>
             <button id="cancel-song-btn">Cancel</button>
         </div>
@@ -133,7 +142,7 @@
         <p class="enjoyText">
             Wish you all a great time enjoying the songs! <br> ヾ(≧▽≦*)o
         </p>
-        <p class="enjoyText miniText">Version 1.1.6</p>
+        <p class="enjoyText miniText">Version 1.2</p>
     </footer>
 
     <script type="module" src="./assets/interactive/main.js"></script>

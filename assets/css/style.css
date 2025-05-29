@@ -4,6 +4,7 @@
     --text-color: #444;
     --dark-color: #121212;
     --dark-color-second: #1A1A1A;
+    --card-background: #fff;
 }
 
 * {
@@ -50,10 +51,6 @@ html {
     cursor: pointer;
 }
 
-/* .player i:not(.icon-pause, .icon-play, .theme-icon):hover {
-  background-color: #f3f3f3;
-} */
-
 /* #endregion Player */
 .dashboard {
     padding: 16px 16px 14px;
@@ -77,7 +74,7 @@ html {
     margin-bottom: 10px;
 }
 
-.search-box > i {
+.search-box>i {
     position: absolute;
     right: 5px;
 }
@@ -119,9 +116,22 @@ html {
     font-size: 12px !important;
 }
 
+.favorite-songs .favorite {
+    margin-right: 5px;
+}
+
 .favorite-songs .favorite,
 .search-songs .favorite {
     font-size: 20px !important;
+}
+
+.favorite-songs .btn-delete,
+.search-songs .btn-delete {
+    display: none;
+}
+
+.search-songs .body {
+    text-align: left;
 }
 
 /* #endregion SEARCH  */
@@ -184,6 +194,7 @@ header h2 {
 header h4 {
     font-size: 14px;
 }
+
 /* #endregion HEADER */
 
 /* #region Options */
@@ -270,7 +281,7 @@ header h4 {
 }
 
 .favorite-songs-header h4 {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .favorite-songs-close {
@@ -300,6 +311,7 @@ header h4 {
     background-size: cover;
     margin: auto;
 }
+
 /* #endregion CD */
 
 /* #region CONTROL */
@@ -321,7 +333,7 @@ header h4 {
 }
 
 .control .btn:not(.active) {
-    color: var(--text-color); 
+    color: var(--text-color);
 }
 
 .control .btn:hover {
@@ -354,6 +366,7 @@ header h4 {
     transition: opacity 0.2s;
     cursor: pointer;
 }
+
 /* #endregion PROGRESS */
 
 /* #region PLAYLIST */
@@ -363,7 +376,12 @@ header h4 {
     transition: background-color 0.35s, color 0.3s;
 }
 
-.song{
+.playlist > p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.song {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -378,6 +396,7 @@ header h4 {
     background-color: #ebebeb;
     /* transform: scale(1.01); */
 }
+
 .dark .song:hover {
     background-color: #222;
 }
@@ -388,7 +407,8 @@ header h4 {
 
 .song.active .author,
 .song.active .title,
-.song.active .favorite {
+.song.active .favorite,
+.song.active .btn-delete {
     color: var(--secondary-color);
 }
 
@@ -411,12 +431,12 @@ header h4 {
 }
 
 .song .author {
-    padding: 6px 8px 6px 0;
+    padding: 8px 8px 4px 0;
     color: #999;
     font-size: 12px;
 }
 
-.liked .favorite  {
+.liked .favorite {
     color: var(--primary-color);
 }
 
@@ -427,6 +447,16 @@ header h4 {
 }
 
 .favorite:hover {
+    color: var(--primary-color);
+}
+
+.btn-delete {
+    color: var(--dark-color-second);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
     color: var(--primary-color);
 }
 
@@ -514,7 +544,8 @@ header h4 {
 
 .dark .song.active .author,
 .dark .song.active .title,
-.dark .song.active .favorite {
+.dark .song.active .favorite,
+.dark .song.active .btn-delete {
     color: var(--secondary-color);
 }
 
@@ -532,23 +563,106 @@ header h4 {
 
 /* #endregion Dark mode theme */
 
+/* Modal container upload song */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+}
+
+
+.modal-content .marginLeft {
+    text-align: left;
+    margin: 4px 0;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline-color: #888;
+}
+
+.modal-content button {
+    margin: 10px 5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container-add-picture {
+    display: flex;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.container-add-picture #upload-image-btn {
+    height: 39px;
+    margin-right: 60px;
+    margin-top: 25px;
+}
+
+.modal-content button:hover {
+    background: #0acbb2;
+}
+
+.modal-content #cancel-song-btn {
+    background: #555;
+}
+
+.modal-content #cancel-song-btn:hover {
+    background: #666;
+}
+
+/* Fix bug */
+/* Bug khi chỉnh khoảng cách của các bài hát */
+.song-node {
+    margin: 8px 0;
+}
+
+/* Bug khi cái pop Upload Songs hiện lên */
+#upload-modal {
+    display: none;
+}
+
+#upload-modal.flex {
+    display: flex;
+    /* Hiển thị modal khi cần */
+}
+
 /* Area css for animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
 
 /* End of Area css for animation */
-
-/* Fix bug */
-.song-node {
-    margin: 8px 0;
-}
-
 
 /* Responsive */
 @media (max-width: 739px) {

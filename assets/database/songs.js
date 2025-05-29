@@ -19,10 +19,10 @@ export default {
             image: "https://photo-resize-zmp3.zadn.vn/w600_r1x1_jpeg/cover/3/f/8/b/3f8b3ba7387b81bf286658ea069b874f.jpg"
         },
         {
-            name: "Gods Remix",
-            singer: "TWEN MUSIC",
-            path: "./assets/music/Gods_remixMusic.mp3",
-            image: "https://cloudcdnvod.tek4tv.vn/Mam/attach/upload/01122022004832/004834_52479783522_5919c73401_k166971614833.jpg"
+            name: "Save Me",
+            singer: "DEAMN",
+            path: "./assets/music/DEAMN-Save Me (Audio).mp3",
+            image: "https://avatar-ex-swe.nixcdn.com/song/2017/06/02/7/d/e/9/1496386230312_500.jpg"
         },
         {
             name: "MONTAGEM CORAL (PHONK)",
@@ -31,10 +31,10 @@ export default {
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqA1CiJA3W2WHBkbGM67NUolfrY09PupgKAA&s"
         },
         {
-            name: "Nightcore - DOTA (Namara Remix) [Basshunter]",
-            singer: "CLuBLioNx",
-            path: "./assets/music/DOTA_Namara Remix_Basshunter.mp3",
-            image: "https://i.ytimg.com/vi/wOZHIh8KSFs/maxresdefault.jpg"
+            name: "Kings and Queens slowed reverb Tik Tok (Savage Remix)",
+            singer: "Ava Max",
+            path: "./assets/music/AvaMaxkingsandqueensslowedreverbTikTok.mp3",
+            image: "https://rare-gallery.com/thumbnail/392235-spirit-chronicles-anime-rio-celia-claire-4k-pc.jpg"
         },
         {
             name: "Nightcore - Levan Polkka (VSNS Remix)",
